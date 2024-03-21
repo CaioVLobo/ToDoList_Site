@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista - ToDoList</title>
+</head>
+<style>
+header {
+  background-color: #006875;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1.0);
+}
+body {
+background-color: #015b72;
+color: #ffffff;
+font-family: 'Arial', sans-serif;
+margin: 0;
+padding: 0;
+align-items: center;
+justify-content: center;
+height: 100vh;
+}
+h2{
+background-color: #0292a5;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 1.0); /* Adicionado sombra */
+max-width: 400px;
+width: 80%;
+text-align: center;
+top: 180px;
+right: -500px;
+position: relative; 
+}
+div {
+color: black;
+font-size: 20px;
+}
+#bt{
+text-align: center;
+top: 180px;
+right: -500px;
+position: relative;
+}
+#texto{
+text-align: center;
+top: 180px;
+right: -500px;
+position: relative;
+}
+#Ad{
+text-align: center;
+top: 180px;
+right: -500px;
+position: relative;
+}
+nav {
+  background-color: #006775;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+#btn{
+  background-color: #00677500;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-color: #00677500;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1.0);
+}
+</style>
+<body>
+    <header>
+        <nav>
+           <button id="btn" onclick="document.location='Login.html';">Login</button>
+           <button id="btn" onclick="document.location='SobreNos.html';">Sobre Nós</button>
+        </nav>
+    </header>
+    <h2 style="color: black;">Bem vindo a Lista de Tarefas</h2>
+    <input id="texto">
+    <button id="Ad" onclick="add();">
+        Adicionar
+    </button>
+    
+    <form>
+        <div>
+    <script>
+        function add() {
+            const div1 = document.createElement('div');
+            const h2N = document.createElement('h2');
+            const texto = document.getElementById('texto').value;
+            h2N.innerHTML = texto;
+            div1.appendChild(h2N);
+            document.body.appendChild(div1);
+
+            const btRemover = document.createElement('button');
+            btRemover.innerHTML = "Remover";
+            btRemover.id = "bt";
+            btRemover.addEventListener('click', function(){
+                div1.remove();
+            })
+            div1.appendChild(btRemover);
+        }
+    </script>
+    </div>
+    </form>
+</body>
+</html>
