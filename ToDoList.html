@@ -32,8 +32,20 @@ max-width: 400px;
 width: 80%;
 text-align: center;
 top: 180px;
-right: -500px;
+right: -480px;
 position: relative; 
+}
+h4{
+background-color: #0292a5;
+padding: 20px;
+border-radius: 8px;
+box-shadow: 0 0 20px rgba(0, 0, 0, 1.0); /* Adicionado sombra */
+max-width: 400px;
+width: 80%;
+text-align: center;
+top: 180px;
+right: -480px;
+position: relative;     
 }
 div {
 color: black;
@@ -71,6 +83,12 @@ nav {
   border-color: #00677500;
   box-shadow: 0 0 20px rgba(0, 0, 0, 1.0);
 }
+input{
+    text-align: center;
+    top: 180px;
+    right: -500px;
+    position: relative;
+}
 </style>
 <body>
     <header>
@@ -85,17 +103,16 @@ nav {
         Adicionar
     </button>
     
-    <form>
-        <div>
     <script>
         function add() {
+            const box = document.createElement('input');
             const div1 = document.createElement('div');
-            const h2N = document.createElement('h2');
+            const h2N = document.createElement('h4');
             const texto = document.getElementById('texto').value;
             h2N.innerHTML = texto;
             div1.appendChild(h2N);
+            div1.appendChild(box);
             document.body.appendChild(div1);
-
             const btRemover = document.createElement('button');
             btRemover.innerHTML = "Remover";
             btRemover.id = "bt";
@@ -103,9 +120,13 @@ nav {
                 div1.remove();
             })
             div1.appendChild(btRemover);
+            box.type="checkbox";
+
+            if (checkBox.checked == true) {  text.style.textDecoration = "line-through";
+}
+
         }
     </script>
-    </div>
-    </form>
+
 </body>
 </html>
