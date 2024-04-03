@@ -6,6 +6,9 @@
     <title>Lista - ToDoList</title>
 </head>
 <style>
+.strike {
+    text-decoration: line-through;
+}
 header {
   background-color: #006875;
   padding: 10px;
@@ -105,10 +108,17 @@ input{
     
     <script>
         function add() {
+            const texto = document.getElementById('texto').value;
+            
+            // Verifica se o campo de entrada está vazio
+            if (texto.trim() === "") {
+                window.alert("Por favor, insira uma tarefa antes de adicionar!");
+                return;
+            }
+            
             const box = document.createElement('input');
             const div1 = document.createElement('div');
             const h2N = document.createElement('h4');
-            const texto = document.getElementById('texto').value;
             h2N.innerHTML = texto;
             div1.appendChild(h2N);
             div1.appendChild(box);
@@ -121,10 +131,17 @@ input{
             })
             div1.appendChild(btRemover);
             box.type="checkbox";
-
-            if (checkBox.checked == true) {  text.style.textDecoration = "line-through";
-}
-
+            box.addEventListener('change', function() {
+                rasurarTexto(h2N, box);
+            });
+        }
+        
+        function rasurarTexto(elementoTexto, checkbox) {
+            if (checkbox.checked) {
+                elementoTexto.classList.add("strike");
+            } else {
+                elementoTexto.classList.remove("strike");
+            }
         }
     </script>
 

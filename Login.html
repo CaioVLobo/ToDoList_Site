@@ -1,11 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login ToDoList</title>
+<style>
+header {
+  background-color: #015b72;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1.0);
+}
+#btni{
+  background-color: #00677500;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  border-color: #00677500;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1.0);
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #015b72;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 96%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+</style>
 </head>
 <body>
-    
+    <header>
+        <nav> <button id="btni" onclick="document.location='ToDoList.html';">Index</button>
+        </nav>
+<div class="container">
+  <h2>Login</h2>
+  <form onsubmit="return validateForm()">
+    <div class="input-group">
+      <label for="username">Usuário</label>
+      <input type="text" id="username" name="username" placeholder="Digite seu usuário">
+    </div>
+    <div class="input-group">
+      <label for="password">Senha</label>
+      <input type="password" id="password" name="password" placeholder="Digite sua senha">
+    </div>
+    <button type="submit" class="btn">Entrar</button>
+  </form>
+</div>
+
+<script>
+function validateForm() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  if (username.trim() === "") {
+    window.alert("Por favor, preencha o campo Usuário");
+    return false;
+  }
+
+  if (password.trim() === "") {
+    window.alert("Por favor, preencha o campo Senha");
+    return false;
+  }
+
+  return true;
+}
+</script>
+
 </body>
 </html>
